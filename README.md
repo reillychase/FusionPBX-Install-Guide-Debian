@@ -138,38 +138,38 @@
 ## In the server Listen 80 section, add this to the end:
 
     location ^~ /app/provision/ {
-        include includes/admin-ips;
+        include /etc/nginx/includes/admin-ips;
         deny all;
     }
 
     location ^~ /xml/ {
         root /var/www/fusionpbx;
-        include includes/admin-ips;
+        include /etc/nginx/includes/admin-ips;
         deny all;
     }
     location ^~ /xml/customer1 {
         root /var/www/fusionpbx;
-        include includes/admin-ips;
-        include includes/customer1-ips;
+        include /etc/nginx/includes/admin-ips;
+        include /etc/nginx/includes/customer1-ips;
         deny all;
     }
     
 ## In the server Listen 443 section, add this to the end:
 
     location ^~ /app/provision/ {
-        include includes/admin-ips;
+        include /etc/nginx/includes/admin-ips;
         deny all;
     }
 
     location ^~ /xml/ {
         root /var/www/fusionpbx;
-        include includes/admin-ips;
+        include /etc/nginx/includes/admin-ips;
         deny all;
     }
     location ^~ /xml/customer1 {
         root /var/www/fusionpbx;
-        include includes/admin-ips;
-        include includes/customer1-ips;
+        include /etc/nginx/includes/admin-ips;
+        include /etc/nginx/includes/customer1-ips;
         deny all;
     }
 
