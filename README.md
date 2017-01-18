@@ -147,14 +147,23 @@
         include /etc/nginx/includes/admin-ips;
         deny all;
     }
-    location ^~ /xml/customer1 {
+    location ^~ /xml/customer1/ {
         root /var/www/fusionpbx;
         include /etc/nginx/includes/admin-ips;
         include /etc/nginx/includes/customer1-ips;
         deny all;
     }
+ 
+Here I am making a firmware directory called /fw, and I don't care who reads those files, it will just be used for phones to download firmware updates
+
+    location ^~ /fw/ {
+        root /var/www/fusionpbx;
+        allow all;
+    }
+    service nginx reload
     
 ## In the server Listen 443 section, add this to the end:
+This allows only admins to access the xml directory, but customer1 can access /xm/customer1 where that customer's configs are. If I later set up customer2, they wouldn't be able to access configss in directories other than their own.
 
     location ^~ /app/provision/ {
         include /etc/nginx/includes/admin-ips;
@@ -166,13 +175,19 @@
         include /etc/nginx/includes/admin-ips;
         deny all;
     }
-    location ^~ /xml/customer1 {
+    location ^~ /xml/customer1/ {
         root /var/www/fusionpbx;
         include /etc/nginx/includes/admin-ips;
         include /etc/nginx/includes/customer1-ips;
         deny all;
     }
 
+Here I am making a firmware directory called /fw, and I don't care who reads those files, it will just be used for phones to download firmware updates
+
+    location ^~ /fw/ {
+        root /var/www/fusionpbx;
+        allow all;
+    }
     service nginx reload
 
 # Method to enable global username 
