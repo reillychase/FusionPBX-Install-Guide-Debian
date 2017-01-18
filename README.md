@@ -129,6 +129,9 @@
 
     allow 1.2.3.4;
 
+    nano /etc/nginx/includes/customer1-ips
+
+    allow 4.4.4.4;
 
     nano /etc/nginx/sites-enabled/fusionpbx
 
@@ -144,7 +147,13 @@
         include includes/admin-ips;
         deny all;
     }
-
+    location ^~ /xml/customer1 {
+        root /var/www/fusionpbx;
+        include includes/admin-ips;
+        include includes/customer1-ips;
+        deny all;
+    }
+    
 ## In the server Listen 443 section, add this to the end:
 
     location ^~ /app/provision/ {
@@ -155,6 +164,12 @@
     location ^~ /xml/ {
         root /var/www/fusionpbx;
         include includes/admin-ips;
+        deny all;
+    }
+    location ^~ /xml/customer1 {
+        root /var/www/fusionpbx;
+        include includes/admin-ips;
+        include includes/customer1-ips;
         deny all;
     }
 
