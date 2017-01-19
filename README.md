@@ -177,6 +177,10 @@ Now the directories are secured per customer using IP address whitelists. We als
         set $allow_http 1;
     }
     
+    if ($uri ~* ^.*fw.*$) {
+        set $allow_http 1;
+    }
+    
     if ($allow_http = 0) {
         rewrite ^(.*) https://$host$1 permanent;
         break;
