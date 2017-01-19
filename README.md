@@ -229,7 +229,11 @@ From SSH
 
     cd /jffs/configs
     vi dnsmasq.conf.add
-        dhcp-option=66,"http://yourpbx.yourdomain.com" 
+        dhcp-option=66,"http://yourpbx.yourdomain.com"
+        
+Save that then reload dnsmasq:
+
+    service restart_dnsmasq
 
 # Method to enable global username 
 ## Allows you to log into any domain from any URL as long as username is unique
