@@ -162,6 +162,26 @@ Here I am making a firmware directory called /fw, and I don't care who reads tho
     }
     service nginx reload
     
+Now the directories are secured per customer using IP address whitelists. We also to make a modification to nginx to not force HTTPS on these directories because, unfortunately, some phones do not support HTTPS config download. Here is how to do that (this only needs to be applied under the Listen 80 server directive):
+    
+    listen 80;
+    server_name fusionpbx;
+    
+    set $allow_http 0;
+    
+    if ($uri ~* ^.*provision.*$) {
+        set $allow_http 1;
+    }
+    
+    if ($uri ~* ^.*xml.*$) {
+        set $allow_http 1;
+    }
+    
+    if ($allow_http = 0) {
+        rewrite ^(.*) https://$host$1 permanent;
+        break;
+    }
+    
 ## In the server Listen 443 section, add this to the end:
 This allows only admins to access the xml directory, but customer1 can access /xm/customer1 where that customer's configs are. If I later set up customer2, they wouldn't be able to access configss in directories other than their own.
 
