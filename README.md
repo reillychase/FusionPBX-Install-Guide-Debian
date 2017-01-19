@@ -187,7 +187,7 @@ Now the directories are secured per customer using IP address whitelists. We als
     }
     
 ## In the server Listen 443 section, add this to the end:
-This allows only admins to access the xml directory, but customer1 can access /xm/customer1 where that customer's configs are. If I later set up customer2, they wouldn't be able to access configss in directories other than their own.
+This allows only admins to access the xml directory, but customer1 can access /xm/customer1 where that customer's configs are. If I later set up customer2, they wouldn't be able to access configs in directories other than their own.
 
     location ^~ /app/provision/ {
         include /etc/nginx/includes/admin-ips;
@@ -213,6 +213,23 @@ Here I am making a firmware directory called /fw, and I don't care who reads tho
         allow all;
     }
     service nginx reload
+    
+# Configure DHCP option 66 at phone location
+DHCP option 66 is used for zero-touch provisioning. A factory reset phone will grab DHCP and if option 66 is included it will use that to contact the provisioning server to download its configuration, upgrade firmware etc. DHCP option 66 is usually not available on consumer routers unless Linux firmware is used. Windows servers also have the option available.
+
+## DHCP Option 66 configuration on ASUS Merlin
+
+From web GUI:
+
+    Administration > System > Enable JFFS partition > Yes
+    Administration > System > Format JFFS partition at next boot > No
+    Administration > System > Enable SSH > Yes
+    
+From SSH
+
+    cd /jffs/configs
+    vi dnsmasq.conf.add
+        dhcp-option=66,"http://yourpbx.yourdomain.com" 
 
 # Method to enable global username 
 ## Allows you to log into any domain from any URL as long as username is unique
