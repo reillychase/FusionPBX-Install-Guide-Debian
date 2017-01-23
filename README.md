@@ -249,23 +249,4 @@ Save that then reload dnsmasq:
     value: global
     hit the reload button
     now usernames have to be unique across the entire system for it to work
-
-# Floating IP Configuration
-
-SSH:
-
-    echo 1 > /proc/sys/net/ipv4/ip_nonlocal_bind
-
-Web: Advanced > SIP Profiles > Internal (Substitute 1.1.1.1 for your Floating IP)
-
-    presence-hosts: $${domain},1.1.1.1
-    ext-rtp-ip: 1.1.1.1
-    ext-sip-ip: 1.1.1.1
-    rtp-ip: 1.1.1.1
-
-Advanced > SIP Profiles > External
-
-    presence-hosts: $${domain},1.1.1.1
-    ext-rtp-ip: 1.1.1.1
-    ext-sip-ip: 1.1.1.1
-    rtp-ip: 1.1.1.1
+    
