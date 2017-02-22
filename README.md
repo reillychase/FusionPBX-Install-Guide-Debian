@@ -13,7 +13,6 @@
     Advanced -> Upgrade select the checkbox for App defaults then execute.
     Go to Status -> SIP Status and start the SIP profiles
     Go to Advanced -> Modules and find the module Memcached and click start.
-    go to advanced -> default settings >  menu_style >  set to inline
 
 # Lets Encrypt Install
 
