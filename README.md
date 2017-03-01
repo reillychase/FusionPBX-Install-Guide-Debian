@@ -16,15 +16,15 @@
 
 # Lets Encrypt Install for NGINX
 
-    -    cd /usr/src/
-     -    git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
-     -    cd /opt/letsencrypt
-     -    chmod a+x ./certbot-auto
-     -    ./certbot-auto
-     -    cd /etc/letsencrypt/
-     -    mkdir -p configs
-     -    cd configs
-     -    nano /etc/letsencrypt/configs/example.com.conf
+    cd /usr/src/
+    git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+    cd /opt/letsencrypt
+    chmod a+x ./certbot-auto
+    ./certbot-auto
+    cd /etc/letsencrypt/
+    mkdir -p configs
+    cd configs
+    nano /etc/letsencrypt/configs/example.com.conf
 
 ## Put this into the .conf file, (edit the defaults):
 
