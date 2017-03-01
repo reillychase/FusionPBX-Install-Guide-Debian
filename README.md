@@ -14,17 +14,9 @@
     Go to Status -> SIP Status and start the SIP profiles
     Go to Advanced -> Modules and find the module Memcached and click start.
 
-# Lets Encrypt Install
+# Lets Encrypt Install for NGINX
 
-    cd /usr/src/
-    git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
-    cd /opt/letsencrypt
-    chmod a+x ./certbot-auto
-    ./certbot-auto
-    cd /etc/letsencrypt/
-    mkdir -p configs
-    cd configs
-    nano /etc/letsencrypt/configs/example.com.conf
+    https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-8
 
 ## Put this into the .conf file, (edit the defaults):
 
