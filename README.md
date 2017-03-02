@@ -238,6 +238,8 @@ Save that then reload dnsmasq:
 
     service restart_dnsmasq
 
+Here's my guide on DHCP option 66 for Ubiquiti's Unifi Security Gateway https://github.com/reillychase/Ubiquiti-USG-DHCP-Option-66
+
 # Method to enable global username 
 ## Allows you to log into any domain from any URL as long as username is unique
 
