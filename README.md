@@ -121,7 +121,7 @@
     Web GUI: Advanced > SIP Profiles > interal-ipv6
     Web GUI: Advanced > SIP Profiles > external-ipv6
 
-# Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
+[OLD - now I am using FusionPBX device provisioning app and HTTP Auth over HTTPS for security instead] # Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
 
 ## Create whitelist called admin-ips:
 
