@@ -247,4 +247,9 @@ Save that then reload dnsmasq:
     value: global
     hit the reload button
     now usernames have to be unique across the entire system for it to work
-    
+  
+# Method to enable device provision white list
+    Advanced > default settings -> Add > category: provision
+    subcategory: cidr
+    type: array
+    value: ip/32
