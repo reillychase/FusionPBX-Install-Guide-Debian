@@ -45,7 +45,7 @@
     # turn off the ncurses UI, we want this to be run as a cronjob
     text = True
 
-    # authenticate by placing a file in the webroot (under .well-known/acme-challenge/)
+    # authenticate by placing a file in the webroot (under .well-known/acme-upatechallenge/)
     # and then letting LE fetch it
     authenticator = webroot
     webroot-path = /var/www/letsencrypt/
@@ -121,7 +121,7 @@
     Web GUI: Advanced > SIP Profiles > interal-ipv6
     Web GUI: Advanced > SIP Profiles > external-ipv6
 
-[OLD - now I am using FusionPBX device provisioning app and HTTP Auth over HTTPS for security instead] # Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
+# [OLD - now I am using FusionPBX device provisioning app and HTTP Auth over HTTPS for security instead] Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
 
 ## Create whitelist called admin-ips:
 
