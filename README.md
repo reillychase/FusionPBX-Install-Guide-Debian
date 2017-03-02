@@ -121,7 +121,7 @@
     Web GUI: Advanced > SIP Profiles > interal-ipv6
     Web GUI: Advanced > SIP Profiles > external-ipv6
 
-# [OLD - now I am using FusionPBX device provisioning app and HTTP Auth over HTTPS for security instead] Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
+# [OLD - now I am using FusionPBX device provisioning app and IP whitelist by device for security instead] Security Recommendation - Limit access to xml phone configuration directories by  nginx directory IP address whitelist
 
 ## Create whitelist called admin-ips:
 
@@ -254,6 +254,6 @@ Save that then reload dnsmasq:
     type: array
     value: ip/32
     
-# Enable HTTP AUTH username and password for secure provisioning
+# [OLD - I couldn't get HTTP AUTH over HTTPS to work with zero touch provisioning using DHCP option 66, now I'm just restricting by IP whitelist] Enable HTTP AUTH username and password for secure provisioning
      Advanced > default settings -> http_auth_password -> <set to password and enable>
      Advanced > default settings -> http_auth_username -> <set to username and enable>
