@@ -253,3 +253,7 @@ Save that then reload dnsmasq:
     subcategory: cidr
     type: array
     value: ip/32
+    
+# Enable HTTP AUTH username and password for secure provisioning
+     Advanced > default settings -> http_auth_password -> <set to password and enable>
+     Advanced > default settings -> http_auth_username -> <set to username and enable>
