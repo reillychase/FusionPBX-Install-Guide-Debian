@@ -259,3 +259,6 @@ Here's my guide on DHCP option 66 for Ubiquiti's Unifi Security Gateway https://
 # [OLD - I couldn't get HTTP AUTH over HTTPS to work with zero touch provisioning using DHCP option 66, now I'm just restricting by IP whitelist] Enable HTTP AUTH username and password for secure provisioning
      Advanced > default settings -> http_auth_password -> <set to password and enable>
      Advanced > default settings -> http_auth_username -> <set to username and enable>
+     
+# How to edit settings per domain
+     Advanced > domains > pencil (edit) > (+) add per domain setting
