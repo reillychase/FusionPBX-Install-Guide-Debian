@@ -263,7 +263,7 @@ Here's my guide on DHCP option 66 for Ubiquiti's Unifi Security Gateway https://
 # How to edit settings per domain
      Advanced > domains > pencil (edit) > (+) add per domain setting
 
-# Allow HTTP download of firmware files in dir /fw/
+# [OLD - now I just put fw dir in /app/provision/fw] Allow HTTP download of firmware files in dir /fw/
 
 nano /etc/nginx/sites-enabled/fusionpbx
 
