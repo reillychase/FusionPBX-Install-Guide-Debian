@@ -72,7 +72,6 @@
 
 ## Next ...
 
-    mkdir /var/www/letsencrypt
     cd /opt/letsencrypt
     ./letsencrypt-auto --config /etc/letsencrypt/configs/domain.tld.conf certonly
 
