@@ -20,6 +20,7 @@
     git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
     cd /opt/letsencrypt
     chmod a+x ./certbot-auto
+    mkdir /etc/letsencrypt
     cd /etc/letsencrypt/
     mkdir -p configs
     cd configs
