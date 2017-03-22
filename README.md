@@ -116,6 +116,26 @@
 
     30 2 * * 1 /etc/fusionpbx/renew-letsencrypt.sh
 
+# IMPORTANT: Allow HTTP requests without rewriting to HTTPS if dir = provision or fw
+
+nano /etc/nginx/sites-enabled/fusionpbx
+
+        server {
+                listen 80;
+                server_name fusionpbx;
+
+                set $prov_test 0;
+                if ($uri ~* ^.*provision.*$) {
+                        set $prov_test 1;
+                }
+                if ($uri ~* ^.*/fw/.*$) {
+                        set $prov_test 1;
+                }
+                if ($prov_test != 1) {
+                        rewrite ^(.*) https://$host$1 permanent;
+                        break;
+                }
+    
 # Disable or Remove IPv6 if not needed
 
     Web GUI: Advanced > SIP Profiles > interal-ipv6
