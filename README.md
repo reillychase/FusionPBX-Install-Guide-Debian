@@ -116,7 +116,7 @@
 
     30 2 * * 1 /etc/fusionpbx/renew-letsencrypt.sh
 
-# IMPORTANT: Allow HTTP requests without rewriting to HTTPS if dir = provision or fw
+# [OLD - This is done automatically by Fusion - Allow HTTP requests without rewriting to HTTPS if dir = provision or fw]
 
 nano /etc/nginx/sites-enabled/fusionpbx
 
