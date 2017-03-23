@@ -13,7 +13,7 @@
     Advanced -> Upgrade select the checkbox for App defaults then execute.
     Go to Status -> SIP Status and start the SIP profiles
     Go to Advanced -> Modules and find the module Memcached and click start.
-
+    
 # Lets Encrypt Install for NGINX
 
     cd /usr/src/
@@ -270,6 +270,11 @@ Here's my guide on DHCP option 66 for Ubiquiti's Unifi Security Gateway https://
     hit the reload button
     now usernames have to be unique across the entire system for it to work
   
+# Enable Provisioning
+
+    Advanced -> Default Settings
+    Edit Provision subcat: enabled, change enabled: false to enabled: true
+    
 # Method to enable device provision white list
     Advanced > default settings -> Add > category: provision
     subcategory: cidr
